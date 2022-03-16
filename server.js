@@ -8,6 +8,9 @@ var express = require("express"),
   port = process.env.PORT || 3000;
 
 app.listen(port);
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
 
 app.get("/benchmark/:time", (req, res) => {
   console.log("inside time here");

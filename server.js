@@ -1,4 +1,5 @@
 const fs = require("fs");
+var cors = require('cors');
 // @ts-ignore
 var csv = require("jquery-csv");
 var $ = require("jquery");
@@ -7,6 +8,7 @@ var express = require("express"),
   app = express(),
   port = process.env.PORT || 3000;
 
+app.use(cors());
 app.listen(port);
 app.get("/", (req, res) => {
   res.send("Hello World");
